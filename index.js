@@ -17,7 +17,7 @@ app.post('/', upload.single('file'), function (req, res, next) {
   console.log('req.body: ' + req.body);
   let num = 1;
   res.json({
-    name: "upfile",
+    name: "upfi",
     type: "asdf",
     size: num
   });
