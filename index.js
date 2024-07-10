@@ -14,7 +14,7 @@ app.get('/', function (req, res) {
 });
 
 
-app.post('/api/fileanalyse', upload.single('file'), function (req, res, next) {
+app.post('/upfile', upload.single('file'), function (req, res, next) {
   console.log('req.body: ' + req.body);
   let num = 1;
   res.json({
