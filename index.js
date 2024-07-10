@@ -1,6 +1,8 @@
 var express = require('express');
+const multer = require('multer');
+const upload = multer({ dest: 'uploads/' });
 var cors = require('cors');
-require('dotenv').config()
+require('dotenv').config();
 
 var app = express();
 
@@ -9,6 +11,16 @@ app.use('/public', express.static(process.cwd() + '/public'));
 
 app.get('/', function (req, res) {
   res.sendFile(process.cwd() + '/views/index.html');
+});
+
+app.post('/', upload.single('file'), function (req, res, next) {
+  console.log('req.body: ' + req.body);
+  let num = 1;
+  res.json({
+    name: "upfile",
+    type: "asdf",
+    size: num
+  });
 });
 
 
