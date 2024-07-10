@@ -13,8 +13,8 @@ app.get('/', function (req, res) {
   res.sendFile(process.cwd() + '/views/index.html');
 });
 
-/*
-app.post('/', upload.single('file'), function (req, res, next) {
+
+app.post('/api/fileanalyse', upload.single('file'), function (req, res, next) {
   console.log('req.body: ' + req.body);
   let num = 1;
   res.json({
@@ -23,7 +23,7 @@ app.post('/', upload.single('file'), function (req, res, next) {
     size: num
   });
 });
-*/
+
 
 
 const port = process.env.PORT || 3000;
