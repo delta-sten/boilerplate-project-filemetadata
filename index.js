@@ -16,7 +16,7 @@ app.get('/', function (req, res) {
 
 app.post('/api/fileanalyse', upload.single('upfile'), function (req, res, next) {
   console.log('req.body vvvvv');
-  console.log(req);
+  console.log(req.file);
   let num = 1;
   res.json({
     name: "upfi",
