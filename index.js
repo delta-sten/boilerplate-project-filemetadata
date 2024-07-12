@@ -15,11 +15,11 @@ app.get('/', function (req, res) {
 
 
 app.post('/api/fileanalyse', upload.single('upfile'), function (req, res, next) {
-  //console.log('req.file vvvvv');
-  console.dir(req.body);
-  //console.log('req.file.fieldname: ' + req.file.fieldname)
-  //console.log('req.file.mimetype: ' + req.file.mimetype);
-  //console.log('req.file.size: ' + req.file.size);
+  console.log('req.file vvvvv');
+  console.log(req.file);
+  console.log('req.file.fieldname: ' + req.file.fieldname)
+  console.log('req.file.mimetype: ' + req.file.mimetype);
+  console.log('req.file.size: ' + req.file.size);
   res.json({
     name: req.file.fieldname,
     type: req.file.mimetype,
