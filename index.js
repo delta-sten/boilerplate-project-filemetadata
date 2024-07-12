@@ -19,9 +19,9 @@ app.post('/api/fileanalyse', upload.single('upfile'), function (req, res, next) 
   console.log(req.file);
   let num = 1;
   res.json({
-    name: "upfi",
-    type: "asdf",
-    size: num
+    name: req.file.fieldname,
+    type: req.file.mimetype,
+    size: req.file.size
   });
 });
 
