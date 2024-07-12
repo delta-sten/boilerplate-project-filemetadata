@@ -17,10 +17,10 @@ app.get('/', function (req, res) {
 app.post('/api/fileanalyse', upload.single('upfile'), function (req, res, next) {
   console.log('req.file vvvvv');
   console.log(req.file);
-  console.log('req.file.fieldname: ' + req.file.fieldname)
+  console.log('req.file.fieldname: ' + req.file.fieldname);
   console.log('req.file.mimetype: ' + req.file.mimetype);
   console.log('req.file.size: ' + req.file.size);
-  res.json({
+  res.send({
     name: req.file.fieldname,
     type: req.file.mimetype,
     size: Number(req.file.size)
