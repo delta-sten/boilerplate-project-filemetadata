@@ -20,11 +20,11 @@ app.post('/api/fileanalyse', upload.single('upfile'), function (req, res, next) 
   console.log('req.file.fieldname: ' + req.file.fieldname);
   console.log('req.file.mimetype: ' + req.file.mimetype);
   console.log('req.file.size: ' + req.file.size);
- let fieldName = req.file.fieldname;
+ let fileName = req.file.filename;
  let mimeType = req.file.mimetype;
  let size = Number(req.file.size);
   res.json({
-    name: JSON.stringify(fieldName),
+    name: JSON.stringify(fileName),
     type: JSON.stringify(mimeType),
     size: size
   });
