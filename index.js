@@ -23,7 +23,7 @@ app.post('/api/fileanalyse', upload.single('upfile'), function (req, res, next) 
  let fileName = req.file.filename;
  let mimeType = req.file.mimetype;
  let size = Number(req.file.size);
-  res.json({
+  res.send({
     name: fileName,
     type: mimeType,
     size: size
